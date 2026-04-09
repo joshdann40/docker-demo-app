@@ -1,0 +1,13 @@
+{
+  "name": "docker-demo-user-profile-app",
+  "version": "1.0.0",
+  "description": "Simple user profile demo app with Express, MongoDB, and Docker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.16.0"
+  }
+}
