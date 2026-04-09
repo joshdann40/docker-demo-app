@@ -7,49 +7,116 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="background-orb background-orb-one"></div>
+    <div class="background-orb background-orb-two"></div>
+
     <main class="page">
-      <section class="hero">
-        <p class="eyebrow">Demo app</p>
-        <h1>User Profile Manager</h1>
-        <p class="intro">
-          A small Docker-ready app with a static frontend, Express backend, and
-          MongoDB storage.
-        </p>
-        <div class="status-row">
-          <span class="status-label">Database status</span>
-          <span id="status-pill" class="status-pill">Checking...</span>
+      <section class="hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Docker Demo App</p>
+          <h1>Profiles, storage, and service health in one clean view.</h1>
+          <p class="intro">
+            A polished user profile dashboard powered by static HTML, Express,
+            and MongoDB. Built to run comfortably on your EC2 instance with a
+            lightweight, responsive interface.
+          </p>
+
+          <div class="hero-actions">
+            <div class="status-panel">
+              <span class="status-label">Database status</span>
+              <span id="status-pill" class="status-pill">Checking...</span>
+            </div>
+            <div class="status-panel">
+              <span class="status-label">Saved profiles</span>
+              <span id="profile-count" class="metric-value">0</span>
+            </div>
+          </div>
         </div>
+
+        <aside class="hero-card">
+          <p class="hero-card-label">Live overview</p>
+          <div class="hero-stat-grid">
+            <article class="hero-stat">
+              <span class="hero-stat-value" id="database-label">MongoDB</span>
+              <span class="hero-stat-text">Primary datastore</span>
+            </article>
+            <article class="hero-stat">
+              <span class="hero-stat-value">Express</span>
+              <span class="hero-stat-text">API + static frontend</span>
+            </article>
+            <article class="hero-stat">
+              <span class="hero-stat-value">Docker</span>
+              <span class="hero-stat-text">Deployable stack</span>
+            </article>
+          </div>
+        </aside>
       </section>
 
-      <section class="card">
-        <h2>Create Profile</h2>
-        <form id="user-form" class="form">
-          <label>
-            Name
-            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
-          </label>
-          <label>
-            Email
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="jane@example.com"
-              required
-            />
-          </label>
-          <label>
-            Age
-            <input type="number" id="age" name="age" min="0" placeholder="28" />
-          </label>
-          <button type="submit">Save Profile</button>
-        </form>
-        <p id="form-message" class="message"></p>
+      <section class="dashboard-grid">
+        <section class="card form-card">
+          <div class="card-heading">
+            <div>
+              <p class="card-kicker">Create user</p>
+              <h2>New profile</h2>
+            </div>
+            <p class="card-note">Add a user and sync it straight to MongoDB.</p>
+          </div>
+
+          <form id="user-form" class="form">
+            <label>
+              Name
+              <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+            </label>
+            <label>
+              Email
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="jane@example.com"
+                required
+              />
+            </label>
+            <label>
+              Age
+              <input type="number" id="age" name="age" min="0" placeholder="28" />
+            </label>
+            <button type="submit">Save Profile</button>
+          </form>
+          <p id="form-message" class="message"></p>
+        </section>
+
+        <section class="card side-card">
+          <div class="card-heading">
+            <div>
+              <p class="card-kicker">Stack summary</p>
+              <h2>System notes</h2>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <article class="info-item">
+              <span class="info-title">Frontend</span>
+              <p>Static HTML, vanilla JavaScript, and a responsive CSS dashboard.</p>
+            </article>
+            <article class="info-item">
+              <span class="info-title">Backend</span>
+              <p>Express handles the API, serves assets, and saves profiles to MongoDB.</p>
+            </article>
+            <article class="info-item">
+              <span class="info-title">Deployment</span>
+              <p>Designed for Docker Compose on EC2 with MongoDB and mongo-express.</p>
+            </article>
+          </div>
+        </section>
       </section>
 
-      <section class="card">
+      <section class="card list-card">
         <div class="section-heading">
-          <h2>Saved Profiles</h2>
+          <div>
+            <p class="card-kicker">User directory</p>
+            <h2>Saved Profiles</h2>
+          </div>
           <button id="refresh-button" class="secondary-button" type="button">
             Refresh
           </button>
