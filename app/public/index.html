@@ -13,12 +13,12 @@
     <main class="page">
       <section class="hero-shell">
         <div class="hero-copy">
-          <p class="eyebrow">Docker Demo App</p>
-          <h1>Profiles, storage, and service health in one clean view.</h1>
+          <p class="eyebrow">Pit Lane Console</p>
+          <h1>Race-day profile control with live service telemetry.</h1>
           <p class="intro">
-            A polished user profile dashboard powered by static HTML, Express,
-            and MongoDB. Built to run comfortably on your EC2 instance with a
-            lightweight, responsive interface.
+            A dark motorsport-inspired dashboard powered by static HTML,
+            Express, and MongoDB. Built for EC2 with a crisp control-panel look
+            and fast status visibility.
           </p>
 
           <div class="hero-actions">
@@ -34,19 +34,19 @@
         </div>
 
         <aside class="hero-card">
-          <p class="hero-card-label">Live overview</p>
+          <p class="hero-card-label">Telemetry snapshot</p>
           <div class="hero-stat-grid">
             <article class="hero-stat">
               <span class="hero-stat-value" id="database-label">MongoDB</span>
-              <span class="hero-stat-text">Primary datastore</span>
+              <span class="hero-stat-text">Primary data engine</span>
             </article>
             <article class="hero-stat">
               <span class="hero-stat-value">Express</span>
-              <span class="hero-stat-text">API + static frontend</span>
+              <span class="hero-stat-text">API and grid display</span>
             </article>
             <article class="hero-stat">
               <span class="hero-stat-value">Docker</span>
-              <span class="hero-stat-text">Deployable stack</span>
+              <span class="hero-stat-text">Container race stack</span>
             </article>
           </div>
         </aside>
@@ -56,10 +56,10 @@
         <section class="card form-card">
           <div class="card-heading">
             <div>
-              <p class="card-kicker">Create user</p>
+              <p class="card-kicker">Driver intake</p>
               <h2>New profile</h2>
             </div>
-            <p class="card-note">Add a user and sync it straight to MongoDB.</p>
+            <p class="card-note">Add a profile and push it straight into the live data lane.</p>
           </div>
 
           <form id="user-form" class="form">
@@ -89,7 +89,7 @@
         <section class="card side-card">
           <div class="card-heading">
             <div>
-              <p class="card-kicker">Stack summary</p>
+              <p class="card-kicker">Garage brief</p>
               <h2>System notes</h2>
             </div>
           </div>
@@ -97,11 +97,11 @@
           <div class="info-list">
             <article class="info-item">
               <span class="info-title">Frontend</span>
-              <p>Static HTML, vanilla JavaScript, and a responsive CSS dashboard.</p>
+              <p>Static HTML, vanilla JavaScript, and a responsive dark control panel.</p>
             </article>
             <article class="info-item">
               <span class="info-title">Backend</span>
-              <p>Express handles the API, serves assets, and saves profiles to MongoDB.</p>
+              <p>Express handles the API, serves assets, and records profiles to MongoDB.</p>
             </article>
             <article class="info-item">
               <span class="info-title">Deployment</span>
@@ -114,7 +114,7 @@
       <section class="card list-card">
         <div class="section-heading">
           <div>
-            <p class="card-kicker">User directory</p>
+            <p class="card-kicker">Starting grid</p>
             <h2>Saved Profiles</h2>
           </div>
           <button id="refresh-button" class="secondary-button" type="button">
