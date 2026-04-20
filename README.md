@@ -135,7 +135,48 @@ The database `user-account` and collection `users` are created automatically whe
 ### To build a Docker image from the application
 
 ```bash
+docker build -t my-app:1.1 ./app
+```
+
+## Versioned Images
+
+You can keep separate application versions by tagging Docker images explicitly instead of reusing one tag.
+
+Example:
+
+```bash
 docker build -t my-app:1.0 ./app
+docker build -t my-app:1.1 ./app
+```
+
+If both tags point to the same image ID, then they are still the same build. To make `1.1` truly different, change the code first and then rebuild `my-app:1.1`.
+
+## Push to AWS ECR
+
+After creating an ECR repository such as `my-app`, log in and push a versioned image:
+
+```bash
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 513691871761.dkr.ecr.us-east-1.amazonaws.com
+docker tag my-app:1.1 513691871761.dkr.ecr.us-east-1.amazonaws.com/my-app:1.1
+docker push 513691871761.dkr.ecr.us-east-1.amazonaws.com/my-app:1.1
+```
+
+When two tags in ECR point to the same digest, AWS shows them as one image entry with multiple tags. That is expected behavior.
+
+## Run Multiple Versions on EC2
+
+You can run two versions side by side by mapping them to different host ports:
+
+```bash
+docker run -d -p 3000:3000 --name my-app-v1 my-app:1.0
+docker run -d -p 3001:3000 --name my-app-v1-1 my-app:1.1
+```
+
+Example URLs:
+
+```text
+http://YOUR_EC2_PUBLIC_IP:3000
+http://YOUR_EC2_PUBLIC_IP:3001
 ```
 
 ## Deploy on EC2
