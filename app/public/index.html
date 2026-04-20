@@ -3,22 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Profile Demo</title>
+    <title>Apex Grid Profiles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="background-orb background-orb-one"></div>
-    <div class="background-orb background-orb-two"></div>
+    <div class="background-mesh"></div>
+    <div class="background-glow background-glow-one"></div>
+    <div class="background-glow background-glow-two"></div>
 
     <main class="page">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Apex Grid Profiles</p>
+          <p class="topbar-note">Express + MongoDB user operations in one polished deployment surface.</p>
+        </div>
+        <div class="topbar-chip">EC2 Ready</div>
+      </header>
+
       <section class="hero-shell">
         <div class="hero-copy">
-          <p class="eyebrow">Pit Lane Console</p>
-          <h1>Race-day profile control with live service telemetry.</h1>
+          <p class="eyebrow">Live Command Center</p>
+          <h1>Modern profile operations with real-time service visibility.</h1>
           <p class="intro">
-            A dark motorsport-inspired dashboard powered by static HTML,
-            Express, and MongoDB. Built for EC2 with a crisp control-panel look
-            and fast status visibility.
+            A contemporary operator dashboard for managing user records, checking
+            MongoDB availability, and monitoring deployment health from a single
+            responsive interface.
           </p>
 
           <div class="hero-actions">
@@ -30,24 +45,38 @@
               <span class="status-label">Saved profiles</span>
               <span id="profile-count" class="metric-value">0</span>
             </div>
+            <div class="status-panel">
+              <span class="status-label">Deployment target</span>
+              <span class="metric-value metric-small">Docker + EC2</span>
+            </div>
           </div>
         </div>
 
         <aside class="hero-card">
-          <p class="hero-card-label">Telemetry snapshot</p>
+          <p class="hero-card-label">Platform Snapshot</p>
           <div class="hero-stat-grid">
             <article class="hero-stat">
               <span class="hero-stat-value" id="database-label">MongoDB</span>
-              <span class="hero-stat-text">Primary data engine</span>
+              <span class="hero-stat-text">Persistent profile storage and health source</span>
             </article>
             <article class="hero-stat">
               <span class="hero-stat-value">Express</span>
-              <span class="hero-stat-text">API and grid display</span>
+              <span class="hero-stat-text">API delivery, static assets, and request handling</span>
             </article>
             <article class="hero-stat">
               <span class="hero-stat-value">Docker</span>
-              <span class="hero-stat-text">Container race stack</span>
+              <span class="hero-stat-text">Containerized workflow for local and EC2 deployment</span>
             </article>
+          </div>
+          <div class="hero-rail">
+            <div class="hero-rail-item">
+              <span class="rail-label">Focus</span>
+              <strong>Fast demos</strong>
+            </div>
+            <div class="hero-rail-item">
+              <span class="rail-label">Stack</span>
+              <strong>Node 20</strong>
+            </div>
           </div>
         </aside>
       </section>
@@ -56,10 +85,10 @@
         <section class="card form-card">
           <div class="card-heading">
             <div>
-              <p class="card-kicker">Driver intake</p>
-              <h2>New profile</h2>
+              <p class="card-kicker">Profile Intake</p>
+              <h2>Create profile</h2>
             </div>
-            <p class="card-note">Add a profile and push it straight into the live data lane.</p>
+            <p class="card-note">Capture a new user and write it directly into the live MongoDB collection.</p>
           </div>
 
           <form id="user-form" class="form">
@@ -89,23 +118,23 @@
         <section class="card side-card">
           <div class="card-heading">
             <div>
-              <p class="card-kicker">Garage brief</p>
-              <h2>System notes</h2>
+              <p class="card-kicker">System Brief</p>
+              <h2>Ops notes</h2>
             </div>
           </div>
 
           <div class="info-list">
             <article class="info-item">
-              <span class="info-title">Frontend</span>
-              <p>Static HTML, vanilla JavaScript, and a responsive dark control panel.</p>
+              <span class="info-title">Frontend layer</span>
+              <p>Static HTML, vanilla JavaScript, and a modern responsive shell with live UI states.</p>
             </article>
             <article class="info-item">
-              <span class="info-title">Backend</span>
-              <p>Express handles the API, serves assets, and records profiles to MongoDB.</p>
+              <span class="info-title">Backend layer</span>
+              <p>Express serves the API, validates form submissions, and persists profiles to MongoDB.</p>
             </article>
             <article class="info-item">
-              <span class="info-title">Deployment</span>
-              <p>Designed for Docker Compose on EC2 with MongoDB and mongo-express.</p>
+              <span class="info-title">Deployment path</span>
+              <p>Designed for Docker Compose on EC2, with clear support for image tagging and ECR pushes.</p>
             </article>
           </div>
         </section>
@@ -114,8 +143,8 @@
       <section class="card list-card">
         <div class="section-heading">
           <div>
-            <p class="card-kicker">Starting grid</p>
-            <h2>Saved Profiles</h2>
+            <p class="card-kicker">Live Directory</p>
+            <h2>Saved profiles</h2>
           </div>
           <button id="refresh-button" class="secondary-button" type="button">
             Refresh
